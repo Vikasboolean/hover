@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background: #366;
+        }
+        .ansh{
+            width: 200px;
+            height: 200px;
+            position: absolute;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem ;
+            
+        }
+        button{
+            padding: 6px;
+            cursor: pointer;
+            background-color: rgb(119, 119, 252);
+            border-radius: 20px;
+            
+        }
+        ::placeholder{
+            color: blueviolet;
+            background-color: aquamarine;
+        }
+        button:hover{
+            color: #fff;
+            background: pink;
+            transition-delay: 0.3s;
+
+
+        }
+
+    </style>
+</head>
+<body>
+    <div class="ansh">
+        <input id="input" placeholder="write some thing to speak">
+        <button onclick="speak()">speak</button>
+    </div>
+</body>
+<script>
+    function speak(){
+        var text = document.getElementById('input').value;
+        var utterence = new SpeechSynthesisUtterance(text)
+        speechSynthesis.speak(utterence);
+    }
+</script>
+</html>
